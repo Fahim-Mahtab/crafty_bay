@@ -1,6 +1,7 @@
 {
-  "helloWorld": "হ্যালো",
+  "helloWorld": "hello",
+  "appTittle": "ক্রাফটী বে",
   "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
+    "description": "এখান থেকে শুরু"
   }
 }

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "605281409116",
+    "firebase_url": "https://flutterapp-74e0e-default-rtdb.firebaseio.com",
+    "project_id": "flutterapp-74e0e",
+    "storage_bucket": "flutterapp-74e0e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605281409116:android:c0949c0b54c0e11797ae99",
+        "android_client_info": {
+          "package_name": "com.example.crafty_bay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA__xEk3A3BX0VPw7ouAaToYX6OCWVvDu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605281409116:android:b551332e8b69c2f497ae99",
+        "android_client_info": {
+          "package_name": "com.example.ui_design_ostad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA__xEk3A3BX0VPw7ouAaToYX6OCWVvDu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605281409116:android:d7074e941037497d97ae99",
+        "android_client_info": {
+          "package_name": "com.example.vara_koto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA__xEk3A3BX0VPw7ouAaToYX6OCWVvDu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

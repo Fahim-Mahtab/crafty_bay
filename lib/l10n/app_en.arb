@@ -1,5 +1,6 @@
 {
 "helloWorld": "Hello World!",
+"appTittle": "Crafty Bay",
 "@helloWorld": {
 "description": "The conventional newborn programmer greeting"
 }
