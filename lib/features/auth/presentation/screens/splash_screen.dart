@@ -1,11 +1,11 @@
-import 'package:crafty_bay/app/provider/language_provider.dart';
-import 'package:crafty_bay/l10n/app_localizations.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 
+import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:flutter/material.dart';
+import '../../../../app/extensions/localization_extension.dart';
+import '../widgets/app_logo.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+  static const String routeName = "/";
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -13,17 +13,34 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+
+    super.initState();
+    _navigateToNextScreen();
+  }
+
+  Future<void> _navigateToNextScreen() async {
+    await Future.delayed(const Duration(seconds: 3));
+    if (mounted) {
+      Navigator.pushReplacementNamed(context, SignUpScreen.routeName);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context).appTittle)),
-      body: Column(
-        children: [
-          SvgPicture.asset("assets/images/logo.svg"),
-          TextButton(
-            onPressed: () => throw Exception(),
-            child: const Text("Throw Test Exception"),
-          ),
-        ],
+      appBar: AppBar(title: Text(context.l10n.appTittle)),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Expanded(child: Center(child: AppLogo(height: 200))),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: CircularProgressIndicator(),
+            ),
+          ],
+        ),
       ),
     );
   }

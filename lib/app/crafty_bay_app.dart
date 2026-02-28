@@ -25,11 +25,12 @@ class CraftyBayApp extends StatelessWidget {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             localizationsDelegates: [
-              AppLocalizations.delegate, // Add this line
+              AppLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
+            themeMode: .light,
             locale: languageProvider.currentLocale,
             supportedLocales: languageProvider.supportedLocales,
           );

@@ -1,6 +1,7 @@
 {
-  "helloWorld": "hello",
+  "helloWorld": "ক্রাফটী বে",
   "appTittle": "ক্রাফটী বে",
+  "bangleTittle": "ক্রাফটী বে",
   "@helloWorld": {
     "description": "এখান থেকে শুরু"
   }
