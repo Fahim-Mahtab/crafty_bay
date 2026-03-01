@@ -9,6 +9,7 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.white,
     textTheme: _textTheme,
     inputDecorationTheme: _inputDecorationTheme,
+    filledButtonTheme: _filledButtonThemeData,
   );
   static final ThemeData _darkThemeData = ThemeData(
     colorSchemeSeed: AppColors.themeColor,
@@ -16,6 +17,7 @@ class AppTheme {
     progressIndicatorTheme: _progressIndicatorThemeData,
     textTheme: _textTheme,
     inputDecorationTheme: _inputDecorationTheme,
+    filledButtonTheme: _filledButtonThemeData,
   );
   static ProgressIndicatorThemeData get _progressIndicatorThemeData =>
       const ProgressIndicatorThemeData(color: AppColors.themeColor);
@@ -31,10 +33,7 @@ class AppTheme {
 
   static InputDecorationTheme get _inputDecorationTheme => InputDecorationTheme(
     contentPadding: EdgeInsets.symmetric(horizontal: 16),
-    hintStyle: TextStyle(
-      color: Colors.grey,
-
-    ),
+    hintStyle: TextStyle(color: Colors.grey),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
       borderSide: const BorderSide(color: AppColors.themeColor),
@@ -48,7 +47,15 @@ class AppTheme {
       borderSide: const BorderSide(color: AppColors.themeColor),
     ),
   );
-
+  static FilledButtonThemeData get _filledButtonThemeData =>
+      FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          fixedSize: const Size.fromWidth(double.maxFinite),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          padding: EdgeInsets.symmetric(vertical: 12),
+          backgroundColor: AppColors.themeColor,
+        ),
+      );
   static ThemeData get lightTheme => _lightThemeData;
   static ThemeData get darkTheme => _darkThemeData;
 }
