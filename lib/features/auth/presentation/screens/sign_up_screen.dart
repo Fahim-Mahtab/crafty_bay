@@ -1,9 +1,10 @@
+import 'package:crafty_bay/features/auth/presentation/screens/otp_screen.dart';
+import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-import '../../../../app/app_colors.dart';
 import '../../../../app/extensions/utils_extension.dart';
 import '../../../shared/Utils/validators.dart';
 import '../widgets/app_logo.dart';
- class SignUpScreen extends StatefulWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
   static const String routeName = "/sign-up";
 
@@ -23,9 +24,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Form(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             key: _formKey,
@@ -84,16 +85,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(height: 8),
                   FilledButton(
-                    style: FilledButton.styleFrom(
-                      fixedSize: const Size.fromWidth(double.maxFinite),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      padding: EdgeInsets.symmetric(vertical: 12),
-                      backgroundColor: AppColors.themeColor,
-                    ),
                     onPressed: _onTapSignUp,
                     child: Text("Sign Up"),
+                  ),
+                  TextButton(
+                    onPressed: _onTapSignIn,
+                    child: Text("Already Have An Account?"),
                   ),
                 ],
               ),
@@ -104,7 +101,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
+  void _onTapSignIn() {
+    Navigator.pushNamed(context, SignInScreen.routeName);
+
+  }
+
   void _onTapSignUp() {
+    Navigator.pushNamed(context, OtpScreen.routeName);
     if (_formKey.currentState!.validate()) {}
   }
 
