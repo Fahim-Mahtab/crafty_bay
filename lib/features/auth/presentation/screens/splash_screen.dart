@@ -1,8 +1,8 @@
-
-import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:crafty_bay/features/shared/presetation/screens/main_nav_holder_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../../app/extensions/localization_extension.dart';
 import '../widgets/app_logo.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
   static const String routeName = "/";
@@ -14,7 +14,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-
     super.initState();
     _navigateToNextScreen();
   }
@@ -22,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _navigateToNextScreen() async {
     await Future.delayed(const Duration(seconds: 3));
     if (mounted) {
-      Navigator.pushReplacementNamed(context, SignUpScreen.routeName);
+      Navigator.pushReplacementNamed(context, MainNavHolderScreen.routeName);
     }
   }
 
