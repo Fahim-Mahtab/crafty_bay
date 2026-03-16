@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../app/assets_path.dart';
+import '../../../../app/extensions/utils_extension.dart';
 import '../widgets/app_bar_icon_button.dart';
 import '../widgets/home_slider.dart';
 
@@ -17,14 +18,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            SearchBarWidget(searchController: _searchController),
-            const SizedBox(height: 20),
-            HomeSlider(),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              SearchBarWidget(searchController: _searchController),
+              const SizedBox(height: 20),
+              HomeSlider(),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  Text("Categories", style: context.textTheme.titleLarge),
+                  const Spacer(),
+                  TextButton(onPressed: () {}, child: Text("See All",)),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
