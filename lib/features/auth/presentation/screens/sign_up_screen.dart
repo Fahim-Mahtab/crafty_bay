@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../app/extensions/utils_extension.dart';
 import '../../../shared/Utils/validators.dart';
 import '../widgets/app_logo.dart';
+
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
   static const String routeName = "/sign-up";
@@ -43,6 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       color: Colors.grey,
                     ),
                   ),
+
                   const SizedBox(height: 20),
                   TextFormField(
                     controller: _emailController,
@@ -84,10 +86,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     validator: (value) => Validators.passwordValidate(value),
                   ),
                   const SizedBox(height: 8),
-                  FilledButton(
-                    onPressed: _onTapSignUp,
-                    child: Text("Sign Up"),
-                  ),
+                  FilledButton(onPressed: _onTapSignUp, child: Text("Sign Up")),
                   TextButton(
                     onPressed: _onTapSignIn,
                     child: Text("Already Have An Account?"),
@@ -103,7 +102,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void _onTapSignIn() {
     Navigator.pushNamed(context, SignInScreen.routeName);
-
   }
 
   void _onTapSignUp() {

@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: _buildAppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text("Categories", style: context.textTheme.titleLarge),
                   const Spacer(),
-                  TextButton(onPressed: () {}, child: Text("See All",)),
+                  TextButton(onPressed: () {}, child: Text("See All")),
                 ],
               ),
             ],
@@ -71,16 +71,16 @@ class SearchBarWidget extends StatelessWidget {
   }
 }
 
-AppBar buildAppBar() {
+AppBar _buildAppBar() {
   return AppBar(
     backgroundColor: Colors.white,
     title: SvgPicture.asset(AssetsPath.navSvg),
     actions: [
+
       AppBarIcons(
         onTap: () {},
         icon: Icon(Icons.person_outline, color: Colors.black87),
       ),
-
       AppBarIcons(
         onTap: () {},
         icon: Icon(Icons.call_outlined, color: Colors.black87),
