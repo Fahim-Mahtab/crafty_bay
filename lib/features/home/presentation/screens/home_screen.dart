@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../app/assets_path.dart';
-import '../../../../app/extensions/utils_extension.dart';
+import '../../../shared/presentation/widgets/category_card.dart';
 import '../widgets/app_bar_icon_button.dart';
 import '../widgets/home_slider.dart';
+import '../widgets/product_search_bar.dart';
+import '../widgets/section_header.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -27,16 +29,24 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               HomeSlider(),
               const SizedBox(height: 20),
-              Row(
-                children: [
-                  Text("Categories", style: context.textTheme.titleLarge),
-                  const Spacer(),
-                  TextButton(onPressed: () {}, child: Text("See All")),
-                ],
-              ),
+              SectionHeader(name: 'Categories', onTapSeeAll: () {}),
+              _buildCategoryCard(),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildCategoryCard() {
+    return SizedBox(
+      height: 100,
+      child: ListView.separated(
+        itemCount: 10,
+        scrollDirection: .horizontal,
+        itemBuilder: (context, index) =>
+            CategoryCard(itemName: "Electronics", icon: Icons.computer),
+        separatorBuilder: (_, _) => const SizedBox(width: 12),
       ),
     );
   }
@@ -48,35 +58,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class SearchBarWidget extends StatelessWidget {
-  const SearchBarWidget({
-    super.key,
-    required TextEditingController searchController,
-  }) : _searchController = searchController;
-
-  final TextEditingController _searchController;
-
-  @override
-  Widget build(BuildContext context) {
-    return SearchBar(
-      controller: _searchController,
-      leading: Icon(Icons.search),
-      hintText: "Search",
-      elevation: WidgetStateProperty.all(0),
-      backgroundColor: WidgetStateProperty.all(Colors.grey.shade200),
-      shape: WidgetStateProperty.all(
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      ),
-    );
-  }
-}
-
 AppBar _buildAppBar() {
   return AppBar(
     backgroundColor: Colors.white,
     title: SvgPicture.asset(AssetsPath.navSvg),
     actions: [
-
       AppBarIcons(
         onTap: () {},
         icon: Icon(Icons.person_outline, color: Colors.black87),

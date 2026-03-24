@@ -1,9 +1,8 @@
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../app/app_colors.dart';
 import '../../../../app/extensions/utils_extension.dart';
-import '../../../shared/Utils/validators.dart';
+import '../../../shared/presentation/Utils/validators.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});

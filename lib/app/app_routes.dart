@@ -4,7 +4,7 @@ import '../features/auth/presentation/screens/otp_screen.dart';
 import '../features/auth/presentation/screens/sign_in_screen.dart';
 import '../features/auth/presentation/screens/sign_up_screen.dart';
 import '../features/auth/presentation/screens/splash_screen.dart';
-import '../features/shared/presetation/screens/main_nav_holder_screen.dart';
+import '../features/shared/presentation/screens/main_nav_holder_screen.dart';
 
 class AppRoutes {
   static MaterialPageRoute<dynamic>? onGenerateRoute(RouteSettings settings) {

@@ -2,7 +2,7 @@ import 'package:crafty_bay/features/auth/presentation/screens/otp_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../../app/extensions/utils_extension.dart';
-import '../../../shared/Utils/validators.dart';
+import '../../../shared/presentation/Utils/validators.dart';
 import '../widgets/app_logo.dart';
 
 class SignUpScreen extends StatefulWidget {
